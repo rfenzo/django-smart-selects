@@ -147,7 +147,11 @@ django.jQuery(document).ready(function ($) {
                 $(chainfield).change(function () {
                     var prefix, start_value, this_val, localID = id;
                     if (localID.indexOf("__prefix__") > -1) {
-                        prefix = $(this).attr("id").match(/\d+/)[0];
+                        let matched = $(this).attr("id").match(/\d+/)
+                        if (!matched){
+                            return {}
+                        }
+                        prefix = matched[0];
                         localID = localID.replace("__prefix__", prefix);
                     }
 
