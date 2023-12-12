@@ -62,26 +62,27 @@ window.addEventListener("load", function() {
             initItem(chained);
         }
     
-        $(document).on('formset:added', function () {
+        $(document).on('formset:added', function (event) {
+            let row = $('#'+event.target.id)
             // Fired every time a new inline formset is created
     
             var chainedFK, chainedM2M, filteredM2M;
     
             // For the ForeingKey
-            chainedFK = $(this).find(".chained-fk");
+            chainedFK = row.find(".chained-fk");
             $.each(chainedFK, function (index, chained) {
                 initFormset(chained);
             });
     
             // For the ManyToMany
-            chainedM2M = $(this).find(".chained");
+            chainedM2M = row.find(".chained");
             $.each(chainedM2M, function (index, chained) {
                 initFormset(chained);
             });
     
             // For the ManyToMany using horizontal=True added after the page load
             // using javascript.
-            filteredM2M = $(this).find(".filtered");
+            filteredM2M = row.find(".filtered");
             $.each(filteredM2M, function (index, filtered) {
                 if (filtered.hasAttribute('data-chainfield')) {
                     initFormset(filtered);
