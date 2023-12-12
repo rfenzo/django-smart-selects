@@ -1,4 +1,4 @@
-(function ($) {
+django.jQuery(document).ready(function ($) {
     "use strict";
 
     function initItem(item) {
@@ -87,4 +87,4 @@
             }
         });
     });
-}(django.jQuery));
+});
