@@ -1,4 +1,4 @@
-(function ($) {
+django.jQuery(document).ready(function ($) {
     "use strict";
 
     window.chainedm2m = function () {
@@ -178,4 +178,4 @@
             }
         };
     }();
-}(django.jQuery));
+});
