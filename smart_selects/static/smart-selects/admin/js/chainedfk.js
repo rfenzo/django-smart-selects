@@ -1,4 +1,4 @@
-(function ($) {
+django.jQuery(document).ready(function ($) {
     "use strict";
 
     window.chainedfk = function () {
@@ -110,4 +110,4 @@
             }
         };
     }();
-}(django.jQuery));
+});
